@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Joan Lopez | Ingeniería Electrónica</title>
+  <meta name="description" content="Portafolio de Joan Esteban Lopez Narvaez, estudiante de Ingeniería Electrónica en la Universidad del Valle.">
+  <meta name="theme-color" content="#1546dc">
+  <meta property="og:title" content="Joan Esteban Lopez Narvaez">
+  <meta property="og:description" content="Ingeniería Electrónica, Universidad del Valle. Electrónica de potencia, control, sistemas embebidos y PCB.">
+  <meta property="og:image" content="assets/img/joan-persona.webp">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/BigShouldersDisplay.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/img/joan-persona.webp" as="image">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-route="home">
+
+  <!-- ===================== Pantalla de carga (skeleton) ===================== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="sk sk--slab"></div>
+    <div class="sk sk--wallet"></div>
+    <div class="sk sk--portrait"></div>
+    <div class="sk sk--hud"></div>
+    <div class="sk sk--hud2"></div>
+    <div class="sk-menu">
+      <div class="sk sk--item" style="--w:82%; --r:-7deg"></div>
+      <div class="sk sk--item" style="--w:64%; --r:4deg"></div>
+      <div class="sk sk--item" style="--w:72%; --r:-3deg"></div>
+    </div>
+    <div class="sk sk--cmd"></div>
+    <div class="sk sk--cmd2"></div>
+  </div>
+
+  <!-- ===================== Barra superior (fija) ===================== -->
+  <header class="topbar" id="topbar">
+    <a class="back" href="#/" data-back>
+      <span class="key">Esc</span><span data-t="hint.back">Volver</span>
+    </a>
+
+    <nav class="tabs" id="tabs" aria-label="Secciones">
+      <a href="#/about" data-route-link="about" data-t="menu.about">Acerca de mí</a>
+      <a href="#/projects" data-route-link="projects" data-t="menu.projects">Proyectos</a>
+      <a href="#/contact" data-route-link="contact" data-t="menu.contact">Contacto</a>
+    </nav>
+
+    <div class="hud" id="hud" aria-hidden="true">
+      <div class="hud__date"><span id="hud-date">--/--</span><span class="hud__day" id="hud-day">---</span></div>
+      <div class="hud__part" id="hud-part">&nbsp;</div>
+    </div>
+
+    <div class="lang" role="group" data-t-attr="aria-label:langLabel">
+      <button type="button" data-lang="es">ES</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== INICIO ===================== -->
+    <section class="screen home" id="screen-home" data-screen="home">
+      <div class="sea" aria-hidden="true"><i></i><i></i></div>
+      <div class="sweep" aria-hidden="true"><i></i><i></i></div>
+
+      <div class="slab" aria-hidden="true">
+        <span class="slab__name"><span class="slab__run"><span id="nt-first">Joan</span> <span id="nt-last">Lopez</span></span></span>
+      </div>
+
+      <svg class="home__traces" id="traces" aria-hidden="true"></svg>
+
+      <figure class="portrait" id="portrait">
+        <div class="portrait__art">
+          <img class="portrait__img" id="portrait-img" alt="Joan Esteban Lopez Narvaez" decoding="async">
+          <svg class="portrait__ghost" viewBox="0 0 300 420" aria-hidden="true">
+            <path d="M150 40c40 0 66 32 66 76c0 30-10 56-26 72c-6 8-6 18 2 24c44 16 90 36 104 78l4 130H0l4-130c14-42 60-62 104-78c8-6 8-16 2-24c-16-16-26-42-26-72c0-44 26-76 66-76z"/>
+          </svg>
+        </div>
+      </figure>
+
+      <div class="wallet">
+        <span class="wallet__k" data-t="wallet.label">Contacto directo</span>
+        <div class="wallet__links">
+          <a id="w-mail" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14"/><path d="M3 6l9 7 9-7"/></svg>
+            <span data-t="wallet.mail">Correo</span>
+          </a>
+          <a id="w-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="13"/><path d="M8.5 7V4.5h7V7M2.5 12.5h19"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a id="w-github" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="menu" id="menu" aria-label="Menú principal"></nav>
+
+      <div class="command" aria-live="polite">
+        <p class="command__t" id="cmd-text">&nbsp;</p>
+        <p class="command__k" data-t="command">Comando</p>
+        <div class="command__keys" aria-hidden="true">
+          <span><i class="ckey">↑↓</i><span data-t="hint.move">Elegir</span></span>
+          <span><i class="ckey">↵</i><span data-t="hint.enter">Entrar</span></span>
+        </div>
+      </div>
+
+      <div class="idcard">
+        <p class="idcard__name" id="id-name">Joan Esteban Lopez Narvaez</p>
+        <p class="idcard__role"><span data-t="idcard.role"></span><br><span data-t="idcard.line"></span></p>
+      </div>
+
+      <div class="stripes" aria-hidden="true"><i></i><i></i></div>
+    </section>
+
+    <!-- ===================== ACERCA DE MÍ ===================== -->
+    <section class="screen page" id="screen-about" data-screen="about" hidden></section>
+
+    <!-- ===================== PROYECTOS ===================== -->
+    <section class="screen page" id="screen-projects" data-screen="projects" hidden></section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="screen page" id="screen-contact" data-screen="contact" hidden></section>
+  </main>
+
+  <!-- Fondo de las páginas internas: luz de agua, nombre de la sección y franjas -->
+  <div class="pagebg" aria-hidden="true">
+    <div class="pagebg__sea"></div>
+    <span class="pagebg__word" id="pagebg-word"></span>
+    <div class="pagebg__slash"></div>
+    <div class="stripes"><i></i><i></i></div>
+  </div>
+
+  <!-- ===================== Ventana de proyecto ===================== -->
+  <dialog class="modal" id="modal"></dialog>
+
+  <!-- ===================== Transición entre pantallas ===================== -->
+  <div class="wipe" id="wipe" aria-hidden="true"><i></i><i></i></div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/vendor/anime.umd.min.js"></script>
+  <script src="data/content.js"></script>
+  <script src="data/projects.js"></script>
+  <script src="js/glyphs.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

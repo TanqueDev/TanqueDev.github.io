@@ -1,0 +1,164 @@
+/* =========================================================
+   DESIGN TOKENS
+   Jerarquía tomada de Persona 3: fondo profundo, texto frío,
+   acento caliente para lo activo, blanco para el resaltado.
+   El rojo del juego se cambia por cobre (pista de PCB).
+   ========================================================= */
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  src: url("../assets/fonts/BigShouldersDisplay.woff") format("woff");
+  font-weight: 100 900;
+  font-display: block;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-Medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("../assets/fonts/Barlow-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../assets/fonts/BarlowCondensed-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../assets/fonts/BarlowCondensed-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* ---------- 1. Primitivos ---------- */
+  --night-950: #030817;
+  --night-900: #06102b;
+  --night-800: #0e2152;
+  --night-700: #163070;
+  --night-600: #22458f;
+  --night-400: #5a78b8;
+
+  /* Mar de Persona 3 Reload: azules brillantes del inicio */
+  --sea-200: #9fe4ff;
+  --sea-300: #47b4ff;
+  --sea-400: #2a86ff;
+  --sea-500: #1f62f5;
+  --sea-600: #1546dc;
+  --sea-700: #0e30b0;
+  --sea-800: #0a2189;
+
+  --cyan-100: #dff7ff;
+  --cyan-200: #b4efff;
+  --cyan-300: #8fe3ff;
+  --cyan-500: #3fb8e6;
+
+  --copper-300: #ffb27a;
+  --copper-500: #ff7a1a;
+  --copper-700: #c2410c;
+
+  --white: #ffffff;
+
+  /* ---------- 2. Semánticos ---------- */
+  --bg: var(--night-900);
+  --bg-deep: var(--night-950);
+  --surface: var(--night-800);
+  --surface-raised: var(--night-700);
+  --trace: var(--night-600);
+  --trace-quiet: var(--night-700);
+
+  --text: var(--white);
+  --text-cool: var(--cyan-300);
+  --text-soft: #b9c9e8;
+  --text-muted: #8ea3cc;
+
+  --accent: var(--copper-500);
+  --accent-shadow: var(--copper-700);
+  --accent-soft: var(--copper-300);
+  --highlight: var(--white);
+  --on-highlight: var(--night-900);
+
+  /* Inicio (fondo brillante) */
+  --sea: linear-gradient(170deg, var(--sea-300) 0%, var(--sea-400) 18%, var(--sea-500) 40%, var(--sea-600) 64%, var(--sea-700) 86%, var(--sea-800) 100%);
+  --menu-idle: var(--cyan-200);
+  --trace-on-sea: rgba(223, 247, 255, 0.34);
+
+  /* Skeleton */
+  --sk-base: var(--surface);
+  --sk-shine: rgba(143, 227, 255, 0.09);
+
+  /* ---------- 3. Tipografía ---------- */
+  --font-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --font-cond: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+
+  /* Escala de tercera mayor (1.25) sobre 18px */
+  --fs-xs: 0.8125rem;   /* 13 */
+  --fs-sm: 0.9375rem;   /* 15 */
+  --fs-md: 1.125rem;    /* 18 */
+  --fs-lg: 1.40625rem;  /* 22.5 */
+  --fs-xl: 1.7578rem;   /* 28 */
+  --fs-2xl: 2.1973rem;  /* 35 */
+  --fs-3xl: clamp(2.5rem, 5.5vw, 4.3rem);
+  --fs-title: clamp(4rem, 13vw, 10.5rem);
+  --fs-menu: clamp(3.4rem, 8.6vw, 8.25rem);
+
+  --lh-tight: 0.86;
+  --lh-snug: 1.15;
+  --lh-body: 1.55;
+
+  /* ---------- 4. Espaciado (base 4px) ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --measure: 62ch;
+  --page-max: 1240px;
+
+  /* ---------- 5. Forma ---------- */
+  --slant: -12deg;         /* inclinación base estilo Persona */
+  --tri: polygon(0 0, 100% 50%, 0 100%);
+  --tri-closed: polygon(0 0, 0 50%, 0 100%);
+  --para: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+
+  /* ---------- 6. Movimiento ---------- */
+  --ease-snap: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 380ms;
+  --dur-4: 620ms;
+
+  /* ---------- 7. Capas ---------- */
+  --z-bg: 0;
+  --z-traces: 1;
+  --z-portrait: 2;
+  --z-ui: 5;
+  --z-header: 20;
+  --z-modal: 60;
+  --z-wipe: 90;
+  --z-loader: 100;
+}
