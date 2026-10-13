@@ -15,7 +15,7 @@ js/glyphs.js          dibujos de reemplazo para proyectos sin fotos
 data/content.js       TODOS los textos (español e inglés), correo, LinkedIn, GitHub
 data/projects.js      lista de proyectos
 assets/fonts/         fuentes locales (Big Shoulders Display, Barlow, Barlow Condensed; licencia OFL)
-assets/img/           tu foto
+assets/img/           mí foto
 assets/projects/      fotos y PDFs de cada proyecto
 ```
 
@@ -23,6 +23,6 @@ assets/projects/      fotos y PDFs de cada proyecto
 
 ## Animaciones
 
-El movimiento usa [anime.js](https://animejs.com/) v4, incluido en `js/vendor/` (licencia MIT): la entrada del menú con resorte, el salto del triángulo al elegir, el texto que se descifra abajo a la derecha y la entrada de los títulos. Si ese archivo falta, el sitio funciona igual con transiciones CSS.
+El movimiento usa [anime.js](https://animejs.com/) v4, incluido en `js/vendor/` (licencia MIT): la entrada del menú con resorte, el salto del triángulo al elegir, el texto que se descifra abajo a la derecha y la entrada de los títulos. Si este archivo llegase a faltar por algún error, el sitio funciona igual con transiciones CSS.
 
 
